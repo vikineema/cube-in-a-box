@@ -1,33 +1,179 @@
---extra-index-url https://packages.dea.ga.gov.au/
-datacube[performance,s3]
+access
+affine
 aiobotocore[awscli,boto3]
 aiohttp
-pyyaml
-wget
-requests
+alabaster
+astropy
+autopep8
+black[jupyter]
+bokeh
+boltons
+Bottleneck
+Cartopy --no-binary cartopy
+cattrs
+ciso8601
+click
+cligj
+cmocean
+cognitojwt # Used for user authentication
+colorama
+contextily
+dask-gateway
+dask-gateway-server
+dask-labextension
+dask-ml
+dask-image
+dask[complete] # due to dask-gateway
 datacube
+# dataclasses #  backport for Python 3.6
+datashader
+deafrica-tools >= 2.4.4
+descartes 
+dill
+distributed # due to dask-gateway
+docutils
+eodatasets3
+fc --extra-index-url https://packages.dea.ga.gov.au/
+folium
+gdal==3.8.5 # should match version in the osgeo/gdal image
+geohash2
+geojson
+geopandas
+geopy
+geoviews
+graphviz
+h5py
+hdmedians --no-binary=hdmedians
+hdstats
+holoviews
+https://github.com/ubarsc/rios/archive/rios-2.0.4.tar.gz
+ipycanvas
+ipyevents
+ipyfilechooser
+ipyleaflet
+ipympl
+ipython
+ipywidgets
+isort
+jedi
+jsonschema
+jupyter
+jupyterhub
+jupyter_bokeh
+jupyter-contrib-core
+jupyter-contrib-nbextensions
+jupyter-nbextensions-configurator
+jupyter-resource-usage
+jupyter-server
+jupyter-server-proxy
+jupyter-ui-poll
+jupyterlab
+jupyterlab-code-formatter
+jupyterlab-code-snippets
+jupyterlab-geojson
+jupyterlab-git
+jupyterlab-iframe
+jupyterlab-language-pack-fr-FR
+jupyterlab-logout
+jupyterlab-system-monitor
+jupyterlab-topbar
+jupyterlab-widgets
+jupytext
+kombu
+lark-parser
+latex
+line-profiler
+mapclassify
+matplotlib
+mypy
+nbconvert # because of jupyter_contrib_nbextensions
+nbdime
+nbformat
+nbgitpuller
+nbmake
+nbval
+netCDF4
+notebook
+numba
+numexpr
+numpy
 odc-algo
-odc-aws
-odc-aio
+odc-dscache
+odc-geo
+odc-index --extra-index-url https://packages.dea.ga.gov.au/
+odc-stac
+odc-stats
+# odc-tools apps
 odc-apps-cloud
 odc-apps-dc-tools
+# odc-tools libs
+odc-cloud[ASYNC]
+odc-io
 odc-ui
-odc-index
-# Jupyter components.
-gdal
-scipy
-Jupyter
-jupyterlab
-ipyleaflet
-folium
+opencv-contrib-python-headless
+opencv-python-headless
+osmnx
+# otps
+OWSLib
+pandana
 pandas
-numpy
-xarray
-matplotlib
-geopandas
-scikit-image
-tqdm
-click<8.0.0
-python-dateutil
+pandoc
+panel
+param
+parso
+pathos
+pillow
+plotly
+poetry
+prompt-toolkit # because of line_profiler/ipython
+protobuf
+psycopg2
+python-ffmpeg
+pyTMD
+pydash
+py3dotplus # replace pydotplus
+pyproj
+pyrsistent
+pysal
+pysheds
 pystac
 pystac-client
+pytest
+pytest-reportlog
+pytest-xdist
+python-dateutil
+python-geohash
+pyviz-comms
+PyYAML
+requests
+rioxarray
+Rtree
+git+https://github.com/daleroberts/s2cloudmask
+s3fs
+scikit-image
+scikit-learn
+scipy
+seaborn
+setuptools-scm[toml]
+setuptools < 60.0
+spyndex
+sidecar
+sqlalchemy
+structlog
+tensorflow
+tflite-runtime-nightly
+thredds_crawler # archived
+toolz
+tqdm
+urbanaccess
+urllib3
+voluptuous
+wget
+xarray
+xgboost # used by Dale's s2cloudmask
+yapf
+zarr
+--no-binary fiona
+--no-binary hdstats
+--no-binary rasterio
+--no-binary shapely
