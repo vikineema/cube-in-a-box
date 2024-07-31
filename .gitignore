@@ -19,3 +19,5 @@ notebooks/.python_history
 .env
 data
 __pycache__
+**/.idea/
+**/core
