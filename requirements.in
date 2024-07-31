@@ -33,7 +33,6 @@ dill
 distributed # due to dask-gateway
 docutils
 eodatasets3
-fc --extra-index-url https://packages.dea.ga.gov.au/
 folium
 gdal==3.8.5 # should match version in the osgeo/gdal image
 geohash2
@@ -100,7 +99,6 @@ numpy
 odc-algo
 odc-dscache
 odc-geo
-odc-index --extra-index-url https://packages.dea.ga.gov.au/
 odc-stac
 odc-stats
 # odc-tools apps
@@ -155,7 +153,7 @@ scikit-learn
 scipy
 seaborn
 setuptools-scm[toml]
-setuptools < 60.0
+# setuptools < 60.0
 spyndex
 sidecar
 sqlalchemy
@@ -173,7 +171,11 @@ xarray
 xgboost # used by Dale's s2cloudmask
 yapf
 zarr
+
 --no-binary fiona
 --no-binary hdstats
 --no-binary rasterio
 --no-binary shapely
+
+--find-links=https://packages.dea.ga.gov.au/
+fc
