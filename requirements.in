@@ -14,6 +14,7 @@ cattrs
 ciso8601
 click
 cligj
+climate_indices
 cmocean
 cognitojwt # Used for user authentication
 colorama
@@ -28,11 +29,12 @@ datacube
 # dataclasses #  backport for Python 3.6
 datashader
 deafrica-tools >= 2.4.4
-descartes 
+descartes
 dill
 distributed # due to dask-gateway
 docutils
 eodatasets3
+flake8
 folium
 gdal==3.8.5 # should match version in the osgeo/gdal image
 geohash2
@@ -40,10 +42,11 @@ geojson
 geopandas
 geopy
 geoviews
+gcsfs
 graphviz
 h5py
 hdmedians --no-binary=hdmedians
-hdstats
+hdstats --no-binary hdstats
 holoviews
 https://github.com/ubarsc/rios/archive/rios-2.0.4.tar.gz
 ipycanvas
@@ -82,7 +85,9 @@ kombu
 lark-parser
 latex
 line-profiler
+localtileserver
 mapclassify
+memory-profiler
 matplotlib
 mypy
 nbconvert # because of jupyter_contrib_nbextensions
@@ -114,20 +119,18 @@ osmnx
 # otps
 OWSLib
 pandana
-pandas
+pandas < 2.2.0
 pandoc
 panel
 param
 parso
 pathos
-pillow
+Pillow
 plotly
 poetry
 prompt-toolkit # because of line_profiler/ipython
 protobuf
 psycopg2
-python-ffmpeg
-pyTMD
 pydash
 py3dotplus # replace pydotplus
 pyproj
@@ -141,7 +144,9 @@ pytest-reportlog
 pytest-xdist
 python-dateutil
 python-geohash
-pyviz-comms
+python-ffmpeg
+pyTMD>=2.1.6
+pyviz_comms
 PyYAML
 requests
 rioxarray
@@ -153,7 +158,6 @@ scikit-learn
 scipy
 seaborn
 setuptools-scm[toml]
-# setuptools < 60.0
 spyndex
 sidecar
 sqlalchemy
@@ -161,21 +165,20 @@ structlog
 tensorflow
 tflite-runtime-nightly
 thredds_crawler # archived
+timescale
 toolz
 tqdm
 urbanaccess
 urllib3
 voluptuous
+wapordl
 wget
-xarray
+xarray[complete]
+xarray-spatial
 xgboost # used by Dale's s2cloudmask
 yapf
 zarr
 
 --no-binary fiona
---no-binary hdstats
 --no-binary rasterio
 --no-binary shapely
-
---find-links=https://packages.dea.ga.gov.au/
-fc
