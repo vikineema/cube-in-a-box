@@ -3,6 +3,9 @@ FROM ghcr.io/osgeo/gdal:ubuntu-small-3.8.5
 ENV DEBIAN_FRONTEND=noninteractive \
     LC_ALL=C.UTF-8 \
     LANG=C.UTF-8 \
+    USE_PYGEOS=0 \
+    SPATIALITE_LIBRARY_PATH='mod_spatialite.so' \
+    SHELL=bash \
     TINI_VERSION=v0.19.0
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
@@ -68,6 +71,8 @@ RUN apt update \
     texlive-fonts-recommended \
     texlive-plain-generic\
     texlive-xetex \
+    # Spatialite support
+    libsqlite3-mod-spatialite \
   && apt clean autoclean \
   && apt autoremove \
   && rm -rf /var/lib/{apt,dpkg,cache}
@@ -87,10 +92,18 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY requirements.txt /conf/
+
+RUN python -m pip install --upgrade pip pip-tools
 RUN pip install --no-cache-dir --requirement /conf/requirements.txt
+
+RUN jupyter server extension enable --py --sys-prefix jupyterlab_iframe jupyter_resource_usage
+
+ENV JUPYTERLAB_DIR=$VIRTUAL_ENV/share/jupyter/lab
+COPY assets/overrides.json $JUPYTERLAB_DIR/settings/
+COPY assets/jupyter_lab_config.py /etc/jupyter/
 
 WORKDIR /notebooks
 
 ENTRYPOINT ["/tini", "--"]
+CMD ["jupyter",  "lab", "--allow-root",  "--ip=0.0.0.0", "--no-browser",  "--port=8888"]
 
-CMD ["jupyter", "notebook", "--allow-root", "--ip='0.0.0.0'", "--NotebookApp.token='secretpassword'"]
