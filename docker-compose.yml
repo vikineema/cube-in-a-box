@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   postgres:
-    image: postgis/postgis:12-2.5
+    image: kartoza/postgis:16-3.4
     environment:
       - POSTGRES_DB=opendatacube
       - POSTGRES_PASSWORD=opendatacubepassword
