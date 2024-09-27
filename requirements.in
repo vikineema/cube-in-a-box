@@ -21,7 +21,7 @@ colorama
 contextily
 dask-gateway
 dask-gateway-server
-dask-labextension
+dask-labextension>=7.0.0
 dask-ml
 dask-image
 dask[complete] # due to dask-gateway
@@ -61,24 +61,25 @@ jedi
 jsonschema
 jupyter
 jupyterhub
-jupyter_bokeh
+jupyter_bokeh>=4.0.0
 jupyter-contrib-core
 jupyter-contrib-nbextensions
 jupyter-nbextensions-configurator
-jupyter-resource-usage
+jupyter-resource-usage>=1.0.0
 jupyter-server
-jupyter-server-proxy
+jupyter-server-proxy>=4.1.0
 jupyter-ui-poll
-jupyterlab
+jupyterlab>=4.0
 jupyterlab-code-formatter
 jupyterlab-code-snippets
 jupyterlab-geojson
 jupyterlab-git
-jupyterlab-iframe
+jupyterlab-iframe>=0.5.0
 jupyterlab-language-pack-fr-FR
-jupyterlab-logout
-jupyterlab-system-monitor
-jupyterlab-topbar
+jupyterlab-logout>=1.0.0
+# jupyterlab-system-monitor archived and components moved to jupyter-resource-usage
+jupyterlab-topbar-text # replace jupyterlab-topbar
+jupyterlab-theme-toggler
 jupyterlab-widgets
 jupytext
 kombu
